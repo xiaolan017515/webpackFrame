@@ -1,0 +1,24 @@
+@import "com";
+.con-msg {
+  width: 500px;
+  height: 400px;
+  border: 1px solid @c-border-sub;
+  box-shadow: 0 0 5px 2px @c-light-1;
+  .title {
+    width: 100%;
+    font-size: 15px;
+    border-bottom: 1px solid @c-border;
+    padding: 10px;
+  }
+  .content {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .commands {
+    >button {
+      width: 50%;
+      box-sizing: border-box;
+      border: 1px solid @c-border;
+    }
+  }
+}

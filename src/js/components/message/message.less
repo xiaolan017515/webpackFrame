@@ -1,0 +1,35 @@
+@import "../../../style/css/com";
+.con-msg {
+  width: 80%;
+  margin-left: 8%;
+  padding: 0 1%;
+  height: auto;
+  box-shadow: 0 0 0 1px @c-light-2;
+  .title {
+    width: 100%;
+    word-wrap: break-word;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 15px;
+    border-bottom: 1px solid @c-border;
+  }
+  .content {
+    text-align: center;
+    font-size: 14px;
+    padding: 20px 10px;
+    word-wrap: break-word;
+    border-bottom: 1px solid @c-border;
+  }
+  .commands {
+    >button {
+      width: 49%;
+      box-sizing: border-box;
+      &:first-child {
+        border-right: 1px solid @c-border;
+      }
+      &:hover {
+        color: @c-ok;
+      }
+    }
+  }
+}

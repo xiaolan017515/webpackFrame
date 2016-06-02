@@ -1,24 +1,24 @@
-const webpack = require("webpack"),
+var webpack = require("webpack"),
     path = require("path"),
     fs = require("fs");
 //ExtractTextPlugin = require("extract-text-webpack-plugin");// 独立css
 
 // 读取入口文件
-const jsDir = fs.readdirSync('./src/js/modules'), entryFiles = {};
-jsDir.forEach((file) => {
-    const fileList = file.split('.');
-    entryFiles[fileList[0]] = __dirname + '/src/js/modules/' + file;
-});
+var jsDir = fs.readdirSync('./src/js/modules'), entryFiles = {};
+for(var i = 0, len = jsDir.length; i < len; i++) {
+    var fileList = jsDir[i].split('.');
+    entryFiles[fileList[0]] = __dirname + '/src/js/modules/' + jsDir[i];
+}
 
 module.exports = {
     devtool: "source-map", // 便于调试
     entry: entryFiles,
     output: {
-        publicPath: "http://localhost:63342/assets/",
+        publicPath: "http://localhost:8080/assets/",
         path: path.join(__dirname, "assets"),
         filename: "[name].js"
     },
-    watch: true,// 观察者模式
+    watch: false,// 观察者模式
     module: {
         preLoaders: [
 
